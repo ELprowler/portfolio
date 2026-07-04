@@ -1553,5 +1553,41 @@ document.addEventListener('click', (e) => {
   observer.observe(footer);
 })();
 </script>
+<!-- 移动端提示遮罩 -->
+<div class="mobile-notice" id="mobile-notice" hidden>
+  <div class="mobile-notice-card">
+    <i class="ph ph-desktop mobile-notice-icon"></i>
+    <h3>建议使用桌面端浏览</h3>
+    <p>本页面为桌面端精心设计，手机端体验尚未打磨完善。</p>
+    <div class="mobile-notice-hint">
+      <span>在浏览器中开启「桌面版网站」模式即可获得最佳体验</span>
+    </div>
+    <button class="mobile-notice-close" id="mobile-notice-close">仍然查看</button>
+  </div>
+</div>
+
+<script>
+/* 移动端检测 — 手机 + 竖屏时提示 */
+(function(){
+  var isMobile = /Android|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent)
+    || ('ontouchstart' in window && window.innerWidth < 1024);
+
+  if (!isMobile) return;
+
+  var notice = document.getElementById('mobile-notice');
+  if (!notice) return;
+
+  /* 点过"仍然查看"则本会话不再弹出 */
+  if (sessionStorage.getItem('mobile-dismissed')) return;
+
+  notice.removeAttribute('hidden');
+
+  document.getElementById('mobile-notice-close').addEventListener('click', function(){
+    notice.setAttribute('hidden', '');
+    sessionStorage.setItem('mobile-dismissed', '1');
+  });
+})();
+</script>
+
 </body>
 </html>

@@ -2198,3 +2198,85 @@ a.contact-item:hover i, .contact-item:hover i { color: var(--accent); }
   .media-grid { grid-template-columns: 1fr; }
 }
 
+/* ========================================= */
+/*  移动端提示遮罩                            */
+/* ========================================= */
+.mobile-notice {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(13,11,10,0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.mobile-notice[hidden] { display: none; }
+
+.mobile-notice-card {
+  text-align: center;
+  max-width: 320px;
+}
+
+.mobile-notice-icon {
+  font-size: 3rem;
+  color: #b89460;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.mobile-notice-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.03em;
+}
+
+.mobile-notice-card p {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+.mobile-notice-hint {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.02);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.mobile-notice-hint span {
+  display: block;
+}
+
+.mobile-notice-close {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  padding: 10px 28px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: all 0.3s var(--ease-out);
+}
+
+.mobile-notice-close:hover {
+  color: var(--text);
+  border-color: rgba(184,148,96,0.3);
+  background: rgba(184,148,96,0.08);
+}
