@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>阿力亚斯卡日·艾克白尔 — 个人简历</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23a06050'/><path d='M8 8h16M8 16h12M8 24h16' stroke='%23e6e3e0' stroke-width='3' stroke-linecap='round'/></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent:    #a06050;
+    --accent-deep: #7a4035;
+    --gold:      #b89460;
+    --text:      #1a1a1a;
+    --text-muted:#5c5652;
+    --text-light:#8a8580;
+    --border:    #d5cfc8;
+    --bg-warm:   #faf7f3;
+    --bg-light:  #f5f0ea;
+    --white:     #fff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* 橘色自定义光标 */
+  body, a, a *, button, [role="button"] {
+    cursor: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI4IDI4Ij48cGF0aCBkPSJNMiAybDUgMjAgNC02IDctNHoiIGZpbGw9IiNmMDkwNTgiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+") 2 2, auto !important;
+  }
+
+  body {
+    font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    font-weight: 300;
+    background: #e8e4df;
+    color: var(--text);
+    line-height: 1.7;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .resume-page {
+    width: 210mm;
+    min-height: 297mm;
+    background: var(--white);
+    padding: 17mm 18mm;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  /* ---- 顶部装饰线 ---- */
+  .resume-page::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 18mm; right: 18mm;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--gold), transparent);
+  }
+
+  /* ========================================
+     头部
+     ======================================== */
+  .resume-header {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 8mm;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .resume-header__logo {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    margin-right: 14px;
+    margin-top: 2px;
+    opacity: 0.85;
+  }
+
+  .resume-header__photo {
+    width: 80px;
+    height: 106px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    object-fit: cover;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  .resume-header__info h1 {
+    font-family: 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', serif;
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--accent-deep);
+    margin-bottom: 2px;
+  }
+
+  .resume-header__info .en-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--text-light);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .contact-row {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .contact-row span {
+    white-space: nowrap;
+  }
+
+  .contact-row .sep {
+    color: var(--border);
+    margin: 0 10px;
+    user-select: none;
+  }
+
+  /* ========================================
+     章节标题
+     ======================================== */
+  .section-title {
+    font-family: 'Songti SC', 'STSong', 'SimSun', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent-deep);
+    padding-bottom: 3px;
+    border-bottom: 1.5px solid var(--accent);
+    margin-bottom: 10px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+  }
+
+  .section-title:first-of-type { margin-top: 0; }
+
+  /* ========================================
+     信息表格
+     ======================================== */
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    margin-bottom: 6px;
+  }
+
+  .info-table td {
+    padding: 3px 10px;
+    border: 1px solid var(--border);
+    line-height: 1.6;
+  }
+
+  .info-table .label {
+    background: var(--bg-light);
+    font-weight: 500;
+    width: 78px;
+    text-align: center;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+  }
+
+  /* ========================================
+     经历条目
+     ======================================== */
+  .entry {
+    margin-bottom: 10px;
+  }
+
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 2px;
+  }
+
+  .entry-title {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: var(--text);
+  }
+
+  .entry-subtitle {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+
+  .entry-date {
+    font-size: 11.5px;
+    color: var(--text-light);
+    white-space: nowrap;
+  }
+
+  .entry-desc {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .entry-desc ul {
+    list-style: disc;
+    padding-left: 16px;
+    margin-top: 2px;
+  }
+
+  .entry-desc li {
+    margin-bottom: 2px;
+    line-height: 1.65;
+  }
+
+  .entry-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 4px;
+  }
+
+  .entry-tag {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    padding: 2px 9px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+
+  /* ========================================
+     技能标签
+     ======================================== */
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 3px;
+  }
+
+  .skill-tag {
+    background: var(--bg-warm);
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+  }
+
+  /* ========================================
+     紧凑列表
+     ======================================== */
+  .compact-list {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.75;
+    padding-left: 16px;
+  }
+
+  .compact-list li {
+    margin-bottom: 2px;
+  }
+
+  /* ========================================
+     页脚
+     ======================================== */
+  .resume-footer {
+    margin-top: 18px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    font-size: 10.5px;
+    color: var(--text-light);
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  /* ========================================
+     打印 / 响应式
+     ======================================== */
+  @media print {
+    body {
+      background: white;
+      padding: 0;
+      margin: 0;
+    }
+    .resume-page {
+      box-shadow: none;
+      margin: 0;
+      padding: 12mm 15mm;
+      width: 100%;
+      min-height: auto;
+      page-break-after: always;
+    }
+    .resume-page::before {
+      left: 15mm;
+      right: 15mm;
+    }
+    .no-print { display: none !important; }
+  }
+
+  @media screen and (max-width: 800px) {
+    .resume-page {
+      width: 100%;
+      padding: 20px 16px;
+    }
+    .resume-page::before {
+      left: 16px;
+      right: 16px;
+    }
+    .resume-header {
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+    }
+    .contact-row {
+      justify-content: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- 操作按钮 -->
+<div class="no-print" style="position:fixed;top:16px;right:16px;z-index:999;display:flex;gap:8px;">
+  <button onclick="window.print()" style="padding:10px 20px;background:#a06050;color:white;border:none;border-radius:6px;cursor:pointer;font-weight:500;font-size:14px;font-family:Inter,'PingFang SC',sans-serif;letter-spacing:0.5px;">
+    打印 / 导出 PDF
+  </button>
+  <a href="index.html" style="padding:10px 20px;background:white;color:#a06050;border:1.5px solid #a06050;border-radius:6px;text-decoration:none;font-weight:500;font-size:14px;font-family:Inter,'PingFang SC',sans-serif;">
+    ← 返回作品集
+  </a>
+</div>
+
+<!-- ========== 第 1 页 ========== -->
+<div class="resume-page">
+
+  <div class="resume-header">
+    <img class="resume-header__logo" src="assets/南开大学-logo.svg" alt="南开大学">
+    <div class="resume-header__info">
+      <h1>阿力亚斯卡日·艾克白尔</h1>
+      <div class="en-name">ELYAS AKBAR</div>
+      <div class="contact-row">
+        <span>138 2053 5232</span><span class="sep">|</span><span>elprowder@qq.com</span><span class="sep">|</span><span>微信：AXA_Elyas</span><br>
+        <span>天津 · 北京 · 深圳</span><span class="sep">|</span><span>+852 5709 6023</span>
+      </div>
+    </div>
+    <img src="assets/avatar.webp" alt="照片" class="resume-header__photo" onerror="this.style.display='none'">
+  </div>
+
+  <!-- 基本信息 -->
+  <div class="section-title" style="margin-top:0;">基本信息</div>
+  <table class="info-table">
+    <tr>
+      <td class="label">出生年份</td><td>1999 年</td>
+      <td class="label">民族</td><td>维吾尔族</td>
+    </tr>
+    <tr>
+      <td class="label">求职方向</td><td>运营 / 项目协调 / 数据分析</td>
+      <td class="label">工作性质</td><td>全职</td>
+    </tr>
+    <tr>
+      <td class="label">到岗时间</td><td>可立即到岗</td>
+      <td class="label">签证状态</td><td>香港高端人才通行证</td>
+    </tr>
+  </table>
+
+  <!-- 教育背景 -->
+  <div class="section-title">教育背景</div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">南开大学 · 软件工程 研修</span>
+      <span class="entry-date">2023.09 — 2025.06</span>
+    </div>
+    <div class="entry-subtitle">软件学院 | 985 / 211 / 双一流 | 天津</div>
+    <div class="entry-desc">
+      <ul>
+        <li>辅修性质，系统补修计算机核心课程</li>
+        <li>修读：线性代数、概率论、离散数学、数据结构、计算机组成原理、编译原理、C / Python / HTML / SQL、软件项目管理</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">南开大学 · 图书馆学 本科（信息资源管理方向）</span>
+      <span class="entry-date">2019.09 — 2023.06</span>
+    </div>
+    <div class="entry-subtitle">商学院 | 985 / 211 / 双一流 | 管理学学士</div>
+    <div class="entry-desc">
+      <ul>
+        <li>工商管理大类招生，主修信息资源管理、信息组织、信息检索、编目与咨询、信息资源建设</li>
+        <li>兼修：信息经济学、知识产权法、数字出版、信息安全</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 工作与实习经历 -->
+  <div class="section-title">工作与实习经历</div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">AXA 安盛保险（香港）— 保险代理人</span>
+      <span class="entry-date">2025.09 — 2026.06</span>
+    </div>
+    <div class="entry-desc">
+      <ul>
+        <li>通过校招获得录用，独立完成高才通签证、香港身份证、保险中介人资格考试（卷一/卷三）及跨境租房等赴港全流程</li>
+        <li>以港深双城通勤方式在港工作，为客户进行财务需求分析（FNA），按需配置医疗、储蓄及投资相连寿险等全线产品方案</li>
+        <li>严格遵循香港保监局《持牌保险代理人操守守则》，合规销售</li>
+      </ul>
+    </div>
+    <div class="entry-tags">
+      <span class="entry-tag">财务需求分析</span>
+      <span class="entry-tag">合规销售</span>
+      <span class="entry-tag">客户沟通</span>
+      <span class="entry-tag">高才通</span>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">广州学求易教育咨询有限公司 — 运营助理</span>
+      <span class="entry-date">2022.03 — 2022.07</span>
+    </div>
+    <div class="entry-desc">
+      <ul>
+        <li>管理 6 个家长社群，通过线上讲座与线下亲子活动为 50+ 学员提供定制学习计划，满意度达 95%</li>
+        <li>定期分析学生作业完成率与知识点错误分布，针对性调整教学内容，平均成绩提升 20%</li>
+      </ul>
+    </div>
+    <div class="entry-tags">
+      <span class="entry-tag">社群运营</span>
+      <span class="entry-tag">数据分析</span>
+      <span class="entry-tag">用户留存</span>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">天津劝业场博物馆 — 用户运营实习生</span>
+      <span class="entry-date">2021.04 — 2021.05</span>
+    </div>
+    <div class="entry-desc">
+      <ul>
+        <li>通过问卷与深度访谈收集 50+ 访客数据，按年龄/兴趣/动机建立用户标签体系，输出报告指导活动策划</li>
+        <li>分析讲解内容耗时，精简冗余并重新设计动线，单次服务时长从 15 分钟压缩至 9 分钟，效率提升 40%</li>
+      </ul>
+    </div>
+    <div class="entry-tags">
+      <span class="entry-tag">用户研究</span>
+      <span class="entry-tag">SOP 优化</span>
+      <span class="entry-tag">活动策划</span>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">天津云海企业孵化器有限公司 — 项目管理实习</span>
+      <span class="entry-date">2019.12 — 2020.02</span>
+    </div>
+    <div class="entry-desc">
+      <ul>
+        <li>建立政策标签体系，将 18 项政策按「阶段 + 类型」分类，制作 2 页速查表，应答时间压缩至 5 分钟以内，重复咨询降 40%</li>
+        <li>分析咨询数据发现异地落户瓶颈，制作标准化手册推至社群，直接转化 6 家新企业</li>
+      </ul>
+    </div>
+    <div class="entry-tags">
+      <span class="entry-tag">政策分析</span>
+      <span class="entry-tag">SOP 设计</span>
+      <span class="entry-tag">B端转化</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== 第 2 页 ========== -->
+<div class="resume-page">
+
+  <!-- 项目经历 -->
+  <div class="section-title" style="margin-top:0;">项目经历</div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">AI 辅助文献筛选</span>
+      <span class="entry-date">2025.11 · 研究助理</span>
+    </div>
+    <div class="entry-subtitle">技术：Deepseek · Excel · HTML | 6,000 篇文献 · 准确率 97%</div>
+    <div class="entry-desc">
+      <ul>
+        <li>设计 Y/N/? 三分类规则，通过 Deepseek 对 6,000 篇学术文献进行自动化相关性判断</li>
+        <li>单篇处理从人工 5 分钟压缩至 10 秒，效率提升约 30 倍，累计节省约 230 小时工作量</li>
+        <li>输出结构化 HTML 标注报告，确保多批次判断标准一致</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">社区养老需求调研</span>
+      <span class="entry-date">独立策划</span>
+    </div>
+    <div class="entry-subtitle">方法：入户访谈 · 标签化分类 · 热力图</div>
+    <div class="entry-desc">
+      <ul>
+        <li>独立策划并执行社区养老调研，入户 208 位老人进行需求采集与标签化分类</li>
+        <li>输出需求热力图和可跨社区复用的标准化操作手册</li>
+      </ul>
+    </div>
+    <div class="entry-tags">
+      <span class="entry-tag">用户研究</span>
+      <span class="entry-tag">SOP 设计</span>
+      <span class="entry-tag">数据可视化</span>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">电商商家信息采集与对接</span>
+      <span class="entry-date">2024</span>
+    </div>
+    <div class="entry-subtitle">兼职 · 数据采集 | 技术：Excel · 流程设计</div>
+    <div class="entry-desc">
+      <ul>
+        <li>按关键词检索淘宝商家，设计标准化客服沟通流程并撰写操作文档</li>
+        <li>整理结构化商家信息表，为下游业务合作提供数据基础</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">MoCA 方言版认知评估 · 语言数据标注</span>
+      <span class="entry-date">兼职</span>
+    </div>
+    <div class="entry-subtitle">维汉双语转录 · 题号标注 · 文本校对</div>
+    <div class="entry-desc">
+      <ul>
+        <li>参与 MoCA 认知评估量表方言版项目，负责维吾尔语-汉语双语转录与任务分类标注</li>
+        <li>完成 13 项认知评估任务 + 4 项语言评估任务的逐句标注与文本校对</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 运营数据分析 — 独立项目 -->
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">运营数据分析与述职报告</span>
+      <span class="entry-date">2024</span>
+    </div>
+    <div class="entry-subtitle">技术：Excel · 数据可视化 | 远程协作</div>
+    <div class="entry-desc">
+      <ul>
+        <li>为海外运营团队制作述职 PPT，独立完成数据清洗、看板搭建与趋势分析</li>
+        <li>核心指标：团队规模 +73%、客户量 +85%、商家入驻 +146%</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 语言能力 -->
+  <div class="section-title">语言能力</div>
+  <table class="info-table">
+    <tr>
+      <td class="label">维吾尔语</td><td>母语</td>
+      <td class="label">普通话</td><td>母语 · 二级甲等</td>
+    </tr>
+    <tr>
+      <td class="label">英语</td><td>CET-4 · 可工作交流</td>
+      <td class="label">MHK</td><td>四级</td>
+    </tr>
+  </table>
+
+  <!-- 专业技能 -->
+  <div class="section-title">专业技能</div>
+  <div class="skill-tags">
+    <span class="skill-tag">Python</span>
+    <span class="skill-tag">SQL</span>
+    <span class="skill-tag">C</span>
+    <span class="skill-tag">HTML / CSS / JS</span>
+    <span class="skill-tag">Excel</span>
+    <span class="skill-tag">Access</span>
+    <span class="skill-tag">Photoshop</span>
+    <span class="skill-tag">Deepseek / AI 工具</span>
+    <span class="skill-tag">数据分析</span>
+    <span class="skill-tag">信息组织与检索</span>
+    <span class="skill-tag">SOP 制定</span>
+    <span class="skill-tag">用户研究</span>
+    <span class="skill-tag">项目管理</span>
+  </div>
+
+  <!-- 证书与资格 -->
+  <div class="section-title">证书与资格</div>
+  <ul class="compact-list">
+    <li>香港高端人才通行证 — 合法在港工作</li>
+    <li>南开大学毕业证书 & 管理学学士学位</li>
+    <li>大学生预定兵通知书 — 国防服役资格</li>
+    <li>C1 驾驶证 · 普通话二级甲等 · MHK 四级</li>
+  </ul>
+
+  <!-- 校园与社会活动 -->
+  <div class="section-title">校园与社会活动</div>
+  <ul class="compact-list">
+    <li>世界大学校长论坛志愿者 · 商学院舞蹈一等奖 · 笔记之星三等奖</li>
+    <li>南开大学"校长杯"绳毽比赛殿军 · 武汉市慈善总会志愿服务</li>
+    <li>无偿献血 6 次 · 累计献血量 1,000ml+</li>
+  </ul>
+
+  <!-- 自我评价 -->
+  <div class="section-title">自我评价</div>
+  <ul class="compact-list" style="margin-bottom:12px;">
+    <li><strong>跨文化背景：</strong>新疆维吾尔青年，维语/普通话双母语，兼具多元文化理解力与国际化视野</li>
+    <li><strong>复合知识结构：</strong>信息资源管理（管理学学士）+ 软件工程研修，文理各半，既懂业务逻辑也具备技术思维</li>
+    <li><strong>实战验证：</strong>从文献筛选到养老调研，从电商采集到运营分析，多类型项目验证了信息处理与流程设计的核心能力</li>
+    <li><strong>自驱力强：</strong>独立完成高才通赴港全流程，多段实习经历证明独立解决问题的能力和责任心</li>
+  </ul>
+
+  <div class="resume-footer">
+    感谢阅读 · 期待交流 &nbsp;|&nbsp; © 2026 阿力亚斯卡日·艾克白尔
+  </div>
+</div>
+
+</body>
+</html>
