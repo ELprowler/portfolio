@@ -361,6 +361,12 @@ hr { border: none; height: 1px; background: var(--border); max-width: var(--cont
   padding-left: var(--space-md);
   border-left: 2px solid rgba(160,96,80,0.35);
 }
+/* 段落内关键词高亮：主题色（勃艮第红）+ 加粗，覆盖 em 默认斜体 */
+.about-narrative em {
+  color: var(--accent);
+  font-style: normal;
+  font-weight: 600;
+}
 
 /* ——— 关于我 · 生活画廊（歪扭堆叠一排，灰阶→hover 高亮）——— */
 .about-gallery {
