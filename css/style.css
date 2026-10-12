@@ -244,6 +244,46 @@ header nav ul a:hover { color: var(--accent); background-size: 100% 1px; }
 }
 .btn-ghost:hover { border-color: var(--accent); color: var(--text); box-shadow: 0 0 16px var(--accent-glow); }
 
+/* 简历版本选择菜单 */
+.resume-picker { position: relative; display: inline-block; }
+.resume-picker__btn {
+  background: transparent; cursor: pointer; font-family: inherit;
+  gap: 0.45rem;
+}
+.resume-picker__btn .ph { font-size: 0.85em; transition: transform var(--duration-base) var(--ease-out); }
+.resume-picker:hover .resume-picker__btn .ph,
+.resume-picker:focus-within .resume-picker__btn .ph,
+.resume-picker.is-open .resume-picker__btn .ph { transform: rotate(180deg); }
+.resume-picker__menu {
+  position: absolute; top: calc(100% + 8px); left: 0; min-width: 168px;
+  padding: 6px; display: flex; flex-direction: column;
+  background: rgba(22,16,16,0.85);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity var(--duration-base) var(--ease-out),
+              transform var(--duration-base) var(--ease-out),
+              visibility var(--duration-base);
+}
+/* 隐形悬停桥：桥接按钮与菜单之间的 8px 间隙，防止划过时菜单提前关闭 */
+.resume-picker__menu::before {
+  content: ''; position: absolute; top: -12px; left: 0; right: 0; height: 12px;
+}
+.resume-picker:hover .resume-picker__menu,
+.resume-picker:focus-within .resume-picker__menu,
+.resume-picker.is-open .resume-picker__menu {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.resume-picker__menu a {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 9px 12px; border-radius: 4px;
+  color: var(--text-muted); font-size: 0.88rem; text-decoration: none;
+  transition: all var(--duration-base) var(--ease-out);
+}
+.resume-picker__menu a:hover { background: rgba(160,96,80,0.14); color: var(--text); }
+.resume-picker__menu a .ph { font-size: 1rem; color: var(--accent); }
+
 /* 头像 */
 .avatar-frame { position: relative; flex-shrink: 0; width: 220px; height: 280px; }
 .avatar-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; position: relative; z-index: 2; display: block; transition: box-shadow 0.6s var(--ease-out); }
