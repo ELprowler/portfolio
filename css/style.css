@@ -248,7 +248,7 @@ header nav ul a:hover { color: var(--accent); background-size: 100% 1px; }
 .resume-picker { position: relative; display: inline-block; }
 .resume-picker__btn {
   background: transparent; cursor: pointer; font-family: inherit;
-  gap: 0.45rem;
+  line-height: inherit; gap: 0.45rem;
 }
 .resume-picker__btn .ph { font-size: 0.85em; transition: transform var(--duration-base) var(--ease-out); }
 .resume-picker:hover .resume-picker__btn .ph,
